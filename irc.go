@@ -352,6 +352,7 @@ func (irc *Connection) SendRawf(format string, a ...interface{}) {
 // RFC 1459 details: https://tools.ietf.org/html/rfc1459#section-4.1.2
 func (irc *Connection) Nick(n string) {
 	irc.nick = n
+	irc.currentnick = n
 	irc.SendRawf("NICK %s", n)
 }
 
